@@ -13,7 +13,11 @@ class FilesController extends Controller
     }
     public function index()
     {
+        $files = File::latest()
+            ->where('user_id', auth()->user()->id)
+            ->get();
 
+        return view('files.index', compact('files'));
     }
     public function store()
     {
