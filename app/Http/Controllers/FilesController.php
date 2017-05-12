@@ -10,4 +10,8 @@ class FilesController extends Controller
     {
 
     }
+    public function store()
+    {
+
+    }
 }
