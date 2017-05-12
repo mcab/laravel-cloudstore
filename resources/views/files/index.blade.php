@@ -8,13 +8,13 @@
                 <div class="panel-heading">Uploaded Files</div>
                 <div class="panel-body">
                     @if (count($files))
-                    <table class="table">
+                    <table class="table table-hover table-nowrap">
                         <thead>
                             <tr>
-                                <th>File Name</th>
-                                <th>File Description</th>
-                                <th>Date Uploaded</th>
-                                <th>Download</th>
+                                <th class="col-sm-3">File Name</th>
+                                <th class="col-sm-6">File Description</th>
+                                <th class="col-sm-2">Uploaded</th>
+                                <th class="col-sm-1"></th>
                             </tr>
                         </thead>
                         <tbody>
