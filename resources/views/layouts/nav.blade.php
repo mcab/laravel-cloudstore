@@ -9,7 +9,8 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                &nbsp;
+                <li><a class="nav-item" href="{{ url('/home') }}">Home</a></li>
+                <li><a class="nav-item" href="{{ url('/files')}}">Files</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
