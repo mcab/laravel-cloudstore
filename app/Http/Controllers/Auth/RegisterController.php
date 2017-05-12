@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use Hashids\Hashids;
+
 class RegisterController extends Controller
 {
     /*
@@ -62,10 +64,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $hashids = new Hashids(random_bytes(16), 8);
+        $hashids = $hashids->encode(random_int(1, 1000));
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'unique_id' => $hashids,
         ]);
     }
 }
