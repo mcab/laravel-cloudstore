@@ -21,8 +21,12 @@ class FilesController extends Controller
     }
     public function store()
     {
+        $uploaded = request()
+            ->file('file')
+            ->store('public/' . auth()->user()->unique_id);
+
         if (! $name = request('name')) {
-            $name = request('file')->getClientOriginalName();
+            $name = pathinfo(request('file')->getClientOriginalName(), PATHINFO_FILENAME);
         }
         if (! $description = request('description')) {
             $description = "";
@@ -32,11 +36,9 @@ class FilesController extends Controller
         $file->name = $name;
         $file->description = $description;
         $file->user_id = auth()->user()->id;
+        $file->file_id = pathinfo($uploaded, PATHINFO_FILENAME);
         $file->save();
 
-        request()
-            ->file('file')
-            ->store('public/' . auth()->user()->unique_id);
         return back();
     }
 }
