@@ -41,4 +41,14 @@ class FilesController extends Controller
 
         return back();
     }
+    public function get($unique_id, $file_id)
+    {
+        if ($unique_id !== auth()->user()->unique_id){
+            return back();
+        }
+        if (! \Storage::disk('public')->exists($unique_id . '/' . $file_id)) {
+            return back();
+        }
+        return \Storage::url($unique_id . '/' . $file_id);
+    }
 }

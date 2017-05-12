@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/files', 'FilesController@index')->name('files');
 Route::post('/files', 'FilesController@store');
-Route::get('/files/{unique_id}/{file_id}', 'FilesController@get');
+Route::get('/storage/{unique_id}/{file_id}', 'FilesController@get');
