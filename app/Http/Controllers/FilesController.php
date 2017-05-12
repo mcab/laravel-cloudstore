@@ -36,7 +36,7 @@ class FilesController extends Controller
         $file->name = $name;
         $file->description = $description;
         $file->user_id = auth()->user()->id;
-        $file->file_id = pathinfo($uploaded, PATHINFO_FILENAME);
+        $file->file_id = pathinfo($uploaded, PATHINFO_BASENAME);
         $file->save();
 
         return back();
