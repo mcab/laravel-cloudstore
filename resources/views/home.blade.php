@@ -8,7 +8,7 @@
                 <div class="panel-heading">Upload a File</div>
 
                 <div class="panel-body">
-                     <form method="POST" action="/files">
+                     <form method="POST" action="/files" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group">
