@@ -1,5 +1,8 @@
 # Cloud Store
 
+## Notice
+This was intended to be an example project, and should not be used in any production capacity. Thus, it has been archived.
+
 ## Introduction
 This is an example site utilizing [Laravel](https://laravel.com/) (and friends) in order to allow users to upload and store files.
 
